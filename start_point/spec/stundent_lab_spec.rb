@@ -10,8 +10,8 @@ def test_student_name
 end
 
 def test_student_cohort
-  cohort = Student.new('Pim', 'G21', 'java')
-  assert_equal('Pim', cohort.name)
+  student = Student.new('Pim', 'G21', 'java')
+  assert_equal('G21', student.cohort)
 end
 
 def test_update_student_name

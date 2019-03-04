@@ -16,15 +16,25 @@ class TestTeam < MiniTest::Test
   end
 
   def test_add_new_player
-    team = Team.new("Patriots", "Jim", [])
-    team.players << 'Burt Reynolds'
+    team = Team.new("Patriots", "Jim")
+    team.add_player("Burt Reynolds")
     assert_equal(["Burt Reynolds"], team.players)
   end
 
   def test_find_player
-    team = Team.new("Patriots", "Jim", ["kumal", "ron", "harry", "Angus Porter"])
-    team.find_player = "Angus Porter"
-    assert_equal("Angus Porter", team.find_player)
+    team = Team.new("Patriots", "Jim")
+    assert_equal(false, team.find_player("Burt Reynolds"))
+    team.add_player("Burt Reynolds")
+    assert_equal(true, team.find_player("Burt Reynolds"))
+  end
+
+  def test_add_points
+    team = Team.new("Patriots", "Jim")
+    assert_equal(0, team.points)
+    team.add_points(true)
+    assert_equal(1, team.points)
+    team.add_points(false)
+    assert_equal(1, team.points)
   end
 
 

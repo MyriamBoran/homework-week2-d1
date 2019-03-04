@@ -26,9 +26,9 @@ def test_update_student_cohort
   assert_equal('G5', student.cohort)
 end
 
-def test_greet_student
+def test_student_talks
   student = Student.new('Jane','G29', 'JavaScript')
-  assert_equal("I can talk", student.greet)
+  assert_equal("I can talk", student.student_talks)
 end
 
 def test_favourite_language

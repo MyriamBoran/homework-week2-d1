@@ -8,7 +8,7 @@ class Student
     @language = language
   end
 
-  def greet
+  def student_talks
     return "I can talk"
   end
 
